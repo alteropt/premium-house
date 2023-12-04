@@ -1,0 +1,155 @@
+@import './normalize';
+@import './variables';
+@import './templates';
+
+// Header
+.header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    padding: 25px 0;
+
+    z-index: 1000;
+
+    color: $secondColor;
+    border-bottom: 1px solid rgba(244, 244, 244, 0.3);
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    &__navigation {
+        ul {
+            display: flex;
+            align-items: center;
+            column-gap: 2.5rem;
+
+            a {
+                text-transform: uppercase;
+                font-weight: 600;
+                line-height: 1.75rem;
+                color: $secondColor;
+
+                transition: color .2s linear;
+
+                &:hover {
+                    color: $accentColor;
+                }
+            }
+        }
+    }
+
+    &__button {
+        display: inline-block;
+
+        @extend %button;
+
+        padding: 1rem 1.5rem;
+
+        transition: color .2s linear;
+
+        &:hover {
+            color: $accentColor;
+        }
+    }
+}
+
+// Home
+.home {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    
+    background: url('../../assets/img/background.jpg') no-repeat center;
+    background-size: cover;
+    color: $secondColor;
+    overflow: hidden;
+    
+    .container {
+        width: 100%;
+        margin: auto 0;
+    }
+
+    &__content {
+        width: 55%;
+    }
+
+    h1 {
+        font-size: $h1Fs;
+        line-height: 3.85rem;
+        margin-bottom: 25px;
+        font-weight: 700;
+    }
+
+    p {
+        font-size: $titleFs;
+        line-height: 1.95rem;
+        margin-bottom: 50px;
+        font-family: $secondaryFf;
+    }
+
+    a {
+        @extend %button;
+        background: $accentColor;
+        color: $textColor;
+        padding: 1.5rem 2rem;
+
+        display: inline-flex; 
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 0.75rem;
+
+        transition: column-gap .2s linear;
+
+        &:hover {
+            column-gap: 1.5rem;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            position: relative;
+            top: -3px;
+        }
+    }
+
+    &__cards {
+        width: 1000px;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 1.25rem;
+        row-gap: 1.25rem;
+        float: right;
+
+        position: relative;
+        bottom: -50%;
+    }
+
+    &__card {
+        padding: 1.25rem;
+        width: 270px;
+        border-radius: 8px;
+        border: 1px solid $accentColor;
+    }
+
+    &__stat {
+        font-family: $secondaryFf;
+        font-size: $statFs;
+        font-weight: 600;
+        line-height: 2.875rem;
+    }
+}
+
+
